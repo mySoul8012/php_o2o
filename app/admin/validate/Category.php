@@ -11,7 +11,7 @@ class Category extends \think\Validate
         'name' => 'require|max:10',
         'parent_id' => 'number',
         'id' => 'number',
-        'status' => 'number|in:-1,0,1',
+        'status' => 'in:-1,0,1',
         'listorder' => 'number'
     ];
 
@@ -29,6 +29,10 @@ class Category extends \think\Validate
         'listorder' => [
             // 排序
             'id', 'listorder'
+        ],
+        'status' => [
+            // 删除
+            'id', 'status'
         ]
     ];
 }

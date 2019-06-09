@@ -1,7 +1,6 @@
 <?php
 namespace app\admin\controller;
 
-
 use think\App;
 use think\exception\ValidateException;
 use think\facade\View;
@@ -113,6 +112,35 @@ class Category extends BaseController
                 ],
                 "time" => time()
             ]);
+        }
+    }
+
+    /**
+     * 删除
+     * @param $id
+     * @param $status
+     * @return string
+     */
+    public function status(int $id,int $status){
+        try {
+            validate(\app\admin\validate\Category::class)->scene('status')->check([
+                'id' => $id,
+                'status' => $status
+            ]);
+        }catch (ValidateException $e){
+            View::assign('errorMessage', $e->getError());
+            return View::fetch('error');
+        }
+
+        $res = app('\app\admin\model\Category')->update([
+            'id' => $id,
+            'status' => $status
+        ]);
+
+        if($res){
+            return View::fetch("success");
+        }else{
+            return View::fetch("error");
         }
     }
 
