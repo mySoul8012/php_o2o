@@ -1,6 +1,7 @@
 <?php
 namespace app\admin\controller;
 
+use Map;
 use think\App;
 use think\exception\ValidateException;
 use think\facade\View;
@@ -142,6 +143,11 @@ class Category extends BaseController
         }else{
             return View::fetch("error");
         }
+    }
+
+
+    public function map(){
+        return  Map::staticimage("北京");
     }
 
     private function update($data){
