@@ -26,14 +26,20 @@ class Login extends BaseController
             }
 
             // 保存用户信息
-            session('bisAccount', $res);
+            session('bisAccount', (String)$res->id);
             return View::fetch('302');
         }else{
             // 获取session 判断重复访问
                 if(session('?bisAccount')){
-                    return View::fetch('/index/index');
+                    return View::fetch('302');
                 }
             return View::fetch("login");
         }
+    }
+
+
+    public function logout(){
+        session('bisAccount', null);
+        return View::fetch("login");
     }
 }

@@ -14,13 +14,12 @@
 // +----------------------------------------------------------------------
 
 return [
-    // session name
-    'name'           => 'ming_',
-    // SESSION_ID的提交变量,解决flash上传跨域
-    'var_session_id' => 'ming_',
-    // 驱动方式 支持file redis memcache memcached
-    'type'           => 'file',
-    'serialize'      => 'json',
-    // 过期时间
-    'expire'         => 0,
+    'type'       => 'redis',
+    'auto_start' => true,
+    // redis主机
+    'host'       => 'redis.iming.info',
+    // redis端口
+    'port'       => 6379,
+    // 密码
+    'password'   => '',
 ];
