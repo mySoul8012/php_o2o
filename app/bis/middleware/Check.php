@@ -6,7 +6,10 @@ class Check
 {
     public function handle($request, \Closure $next)
     {
-        dump(session('?bisAccount'));
-        return $next($request);
+        if(session('?bisAccount')) {
+            return $next($request);
+        }else{
+            return redirect(url('login/index'));
+        }
     }
 }

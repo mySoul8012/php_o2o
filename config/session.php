@@ -14,12 +14,12 @@
 // +----------------------------------------------------------------------
 
 return [
-    'type'       => 'redis',
+    'type'       => \think\facade\Env::get('REDIS.TYPEREDIS'),
     'auto_start' => true,
     // redis主机
-    'host'       => 'redis.iming.info',
+    'host'       => \think\facade\Env::get('REDIS.HOSTREDIS'),
     // redis端口
-    'port'       => 6379,
+    'port'       => \think\facade\Env::get('REDIS.PORTREDIS'),
     // 密码
     'password'   => '',
 ];
