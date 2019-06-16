@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e79f4a5c05ffeeab05aefe39b222089b",
+    "content-hash": "54891909c816dfdad6f2f8573364f8b3",
     "packages": [
         {
             "name": "opis/closure",
@@ -569,6 +569,52 @@
                 "thinkphp"
             ],
             "time": "2019-06-06T07:09:59+00:00"
+        },
+        {
+            "name": "topthink/think-captcha",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-captcha.git",
+                "reference": "9fc0c627d773f6a54a8dd142ebf358f746557a48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-captcha/zipball/9fc0c627d773f6a54a8dd142ebf358f746557a48",
+                "reference": "9fc0c627d773f6a54a8dd142ebf358f746557a48",
+                "shasum": ""
+            },
+            "require": {
+                "topthink/framework": "^6.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "think": {
+                    "services": [
+                        "think\\captcha\\CaptchaService"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\captcha\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "captcha package for thinkphp",
+            "time": "2019-06-06T07:16:01+00:00"
         },
         {
             "name": "topthink/think-template",

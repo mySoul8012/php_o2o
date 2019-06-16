@@ -22,7 +22,9 @@
         "symfony/var-dumper":"^4.2",
         "ext-curl": "*",
       "ext-json": "*",
-        "phpmailer/phpmailer": "^6.0"
+        "phpmailer/phpmailer": "^6.0",
+        "topthink/think-captcha": "^3.0",
+      "ext-gd": "*"
     },
     "autoload": {
         "psr-4": {
