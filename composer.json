@@ -24,7 +24,8 @@
       "ext-json": "*",
         "phpmailer/phpmailer": "^6.0",
         "topthink/think-captcha": "^3.0",
-      "ext-gd": "*"
+      "ext-gd": "*",
+        "aliyuncs/oss-sdk-php": "^2.3"
     },
     "autoload": {
         "psr-4": {

@@ -13,6 +13,5 @@ class Image extends Controller
         // 目录
         $info = $file->move('upload');
         print_r($info);
-        exit;
     }
 }

@@ -9,14 +9,19 @@ use think\facade\View;
 class Featured extends BaseController
 {
     public function index(){
+        $res = app('app\admin\model\Featured')->selectAll();
+        View::assign("res", $res);
         return View::fetch();
     }
 
     public function add(){
         if($this->request->isPost()){
+            $file = request()->file('image');
+            $oss = app('OSS');
+
             // 入库
             $data = input('post.');
-
+            $data['image'] = $oss->uploadFile($file);
             // 校验
 
             // 入model层

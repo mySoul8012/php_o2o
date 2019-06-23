@@ -11,4 +11,8 @@ class Featured extends Model
     public function add($data){
         return $this->insert($data);
     }
+
+    public function selectAll(){
+        return $this->select();
+    }
 }

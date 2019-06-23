@@ -8,7 +8,7 @@ use think\facade\View;
 use think\Model;
 class City extends BaseController
 {
-    public function getcitysbyparentid(int $id = 0){
+    public function getcitysbyparentid($id = 0){
         $citys = app("app\bis\model\City")->getNormalCitysByParentId($id);
         $res = [
             'status' => 1,

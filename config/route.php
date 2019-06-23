@@ -31,7 +31,7 @@ return [
     // 是否强制使用路由
     'url_route_must'        => false,
     // 合并路由规则
-    'route_rule_merge'      => true,
+    'route_rule_merge'      => false,
     // 路由是否完全匹配
     'route_complete_match'  => false,
     // 使用注解路由
@@ -53,7 +53,7 @@ return [
     // 域名根，如thinkphp.cn
     'url_domain_root'       => '',
     // 是否自动转换URL中的控制器和操作名
-    'url_convert'           => true,
+    'url_convert'           => false,
     // 表单请求类型伪装变量
     'var_method'            => '_method',
     // 表单ajax伪装变量

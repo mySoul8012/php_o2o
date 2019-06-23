@@ -2,7 +2,7 @@
 {include file="public/header" /}
 <div class="cl pd-5 bg-1 bk-gray mt-20"> 添加团购商品信息</div>
 <article class="page-container">
-  <form class="form form-horizontal" id="form-article-add" method="post" action="{:url('deal/add')}">
+  <form class="form form-horizontal" id="form-article-add" method="post" action="{:url('deal/add')}" enctype="multipart/form-data">
     基本信息：
     <div class="row cl">
       <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>团购名称：</label>
@@ -25,7 +25,7 @@
       </div>
       <div class="formControls col-xs-8 col-sm-2">
 				<span class="select-box">
-				<select name="city_id" class="select se_city_id">
+				<select class="select se_city_id">
                   <option value="0">--请选择--</option>
                 </select>
 				</span>
@@ -56,9 +56,7 @@
       <label class="form-label col-xs-9 col-sm-2">支持门店：</label>
       <div class="formControls col-xs-8 col-sm-9 skin-minimal">
         <div class="check-box">
-          {volist name="bislocations" id="vo"}
-          <input name="location_ids[]" type="checkbox" id="checkbox" value="{$vo.id}"/>{$vo.name}
-          {/volist}
+          <input name="location_ids[]" type="checkbox" id="checkbox" value=""/>
 
         </div>
       </div>
@@ -67,9 +65,7 @@
     <div class="row cl">
       <label class="form-label col-xs-4 col-sm-2">缩略图：</label>
       <div class="formControls col-xs-8 col-sm-9">
-        <input id="file_upload"  type="file" multiple="true" >
-        <img style="display: none" id="upload_org_code_img" src="" width="150" height="150">
-        <input id="file_upload_image" name="image" type="hidden" multiple="true" value="">
+        <input id="file_upload"  type="file" multiple="true" name="image" >
       </div>
     </div>
     <div class="row cl">
@@ -144,17 +140,17 @@
   var SCOPE = {
     "city_url" : "{:url('api/city/getCitysByParentId')}",
     "category_url" : "{:url('api/category/getCategoryByParentId')}",
-    "uploadify_swf" : "__STATIC__/admin/uploadify/uploadify.swf",
+    "uploadify_swf" : "/static/admin/uploadify/uploadify.swf",
     "image_upload" : "{:url('api/image/upload')}",
   };
 
 </script>
 <!--包含头部文件-->
 {include file="public/footer" /}
-<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
-<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
-<script type="text/javascript" src="__STATIC__/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
-<script src="__STATIC__/admin/hui/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/static/admin/hui/lib/ueditor/1.4.3/ueditor.config.js"></script>
+<script type="text/javascript" src="/static/admin/hui/lib/ueditor/1.4.3/ueditor.all.min.js"> </script>
+<script type="text/javascript" src="/static/admin/hui/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+<script src="/static/admin/hui/lib/My97DatePicker/WdatePicker.js"></script>
 <script>
   $(function(){
     var ue = UE.getEditor('editor');

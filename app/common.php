@@ -66,3 +66,11 @@ function bisRegister($status){
     }
     return $str;
 }
+
+// 订单号生成
+function setOrderSn(){
+    list($t1, $t2) = explode(' ', microtime());
+    $t3 = explode('.', $t1 * 100000);
+    return $t2.$t3[0].(rand(10000, 9999999));
+
+}

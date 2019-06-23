@@ -12,6 +12,10 @@ class User extends BaseController
     }
 
     public function login(){
+        $user = session('o2o_user');
+        if($user){
+            return View::fetch('302');
+        }
         return View::fetch();
     }
 
@@ -43,8 +47,7 @@ class User extends BaseController
 
         // 保存session
         session('o2o_user', (String)$user->id);
-
-        redirect(url('index/index'));
+        return View::fetch('302');
     }
 
     /**
@@ -75,5 +78,11 @@ class User extends BaseController
             }
         }
         return View::fetch();
+    }
+
+    // 退出登录
+    public function logout(){
+        session('o2o_user', null);
+        return View::fetch('login');
     }
 }

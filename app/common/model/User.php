@@ -9,6 +9,7 @@ use think\Model;
 
 class User extends Model
 {
+
     public function add($data){
 
         $data['status'] = 1;
@@ -27,7 +28,7 @@ class User extends Model
     }
 
     public function updateById($data, $id){
-        return $this->allowField(true)->update($data, [
+        return $this->update($data, [
             'id' => $id
         ]);
     }

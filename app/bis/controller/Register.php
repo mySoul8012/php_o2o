@@ -26,6 +26,10 @@ class Register
 
         $data = input('post.');
 
+        $oss = app('OSS');
+        $files = request()->file('image');
+        $data['logo'] = $oss->uploadFile($files[0]);
+        $data['licence_logo'] = $oss->uploadFile($files[1]);
         // 获取经纬度
         $lnglat = \Map::getLngLat($data["address"]);
         if(empty($lnglat)){
@@ -80,7 +84,6 @@ class Register
         ];
 
         $accountId = app("app\bis\model\BisAccount")->add($accounData);
-        dump($accountId);
         if(!$accountId){
             return View::fetch('error');
         }
